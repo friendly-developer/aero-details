@@ -1,7 +1,7 @@
-<mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark primary-color-dark " [containerInside]="true">
-  <logo>
-    <a class="logo navbar-brand text-center" href="#">
-      <strong>Airlines LOGO</strong>
+<mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark primary-color-dark text-center" [containerInside]="true">
+  <logo class="">
+    <a class="logo navbar-brand" href="#">
+      <strong>Check In</strong>
     </a>
   </logo>
 </mdb-navbar>
@@ -10,17 +10,23 @@
   <div class="container p-5">
     <div class='section '>
       <form>
-        <p class="h5 text-center mb-4 ">CHECKIN</p>
+        <p class="h5 text-center mb-4 ">RETRIEVE YOUR BOOKING</p>
+
+        <p class="text-center">
+          You can find your booking by filling out your family name and booking code in your booking confirmation
+        </p>
 
         <div class="md-form">
           <i class="fa fa-envelope prefix grey-text"></i>
-          <input type="text" id="form3" class="form-control" mdbActive>
+          <input mdbActive data-error="Enter a valid Booking Code" data-success="valid name" pattern='^[a-zA-Z0-9]+$' type='text' class="form-control"
+            name="code" mdbInputValidate>
           <label for="form3">{{lang | i18nSelect: translatedCode}}</label>
         </div>
 
-        <div class="md-form">
+        <div class="md-form mt-5">
           <i class="fa fa-user prefix grey-text"></i>
-          <input type="text" id="form2" class="form-control" mdbActive>
+          <input mdbActive data-error="Enter a valid Family name" data-success="valid name" pattern='^[a-zA-Z ]+$' type='text' class="form-control"
+            name="code" mdbInputValidate>
           <label for="form2">{{lang | i18nSelect: translatedName}}</label>
         </div>
 

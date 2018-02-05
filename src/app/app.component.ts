@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { I18nSelectPipe } from '@angular/common';
+import { PatternValidator } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
