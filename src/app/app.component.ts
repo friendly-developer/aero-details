@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { I18nSelectPipe } from '@angular/common';
 import { PatternValidator } from '@angular/forms';
+import { CommonServiceService } from './common-service.service';
 
 @Component({
   selector: 'app-root',
@@ -8,7 +9,7 @@ import { PatternValidator } from '@angular/forms';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-
+  private url: String = '';
   public lang: String = 'en';
   public translatedCode: any = {
     'en': 'Booking Code',
@@ -24,10 +25,16 @@ export class AppComponent implements OnInit {
     'other': 'Retrieve booking',
 
   };
-  constructor() {
+  constructor(private commonSerivce: CommonServiceService) {
 
   }
   ngOnInit() {
+    this.commonSerivce.getRequest(this.url)
+      .subscribe((resp) => {
+
+      }, (err) => {
+
+      });
 
   }
 }
